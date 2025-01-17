@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.btn-primary {
+  @apply inline-block px-6 py-3 rounded-full text-white font-semibold;
+  background: linear-gradient(135deg, #ff007f, #00d4ff);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.7), 0 0 20px rgba(255, 0, 127, 0.5);
+}
+
+.hover\:shadow-glow:hover {
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+.dark body {
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+}
+
+.light body {
+  background: white;
+  color: black;
+}
+
+.active-nav-link {
+  @apply bg-white/20 rounded px-2 py-1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
